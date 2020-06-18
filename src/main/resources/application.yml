@@ -1,0 +1,21 @@
+spring:
+  data:
+    mongodb:
+      database: spring_data
+      host: ${ECS_MONGO_HOST:localhost}
+      port: ${ECS_MONGO_PORT:27017}
+      username: ${ECS_MONGO_USERNAME}
+      password: ${ECS_MONGO_PASSWORD}
+      authentication-database: admin
+
+logging:
+  level:
+    com.novemberain.quartz.mongodb: WARN
+    org.springframework.statemachine.support: WARN
+
+#TelegramConfig
+---
+telegrambot:
+  username: ${TELEGRAM_NAME:ParseDollar_bot}
+  token: ${TELEGRAM_TOKEN:1190069143:AAFXsQrLauVLSYEl__ECKGMVB9H_lhjVOD4}
+  baseurl: ${TELEGRAM_HOST:https://api.telegram.org/bot}
